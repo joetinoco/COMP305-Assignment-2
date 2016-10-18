@@ -4,7 +4,6 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-
     // private instance variables
     private Transform _transform;
     private Rigidbody2D _rigidBody;
@@ -15,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Boolean _isGrounded;
     private GameObject _camera;
     private GameObject _spawnPoint;
+    private LevelController _controller;
 
     // public instance variables (for testing)
     public float Velocity = 20f;
@@ -87,6 +87,8 @@ public class PlayerController : MonoBehaviour
         this._move = 0f;
         this._isFacingRight = true;
         this._isGrounded = false;
+
+        this._controller = GameObject.FindWithTag("GameController").GetComponent<LevelController>();
     }
 
     // this method flips the character's bitmap across the x-axis
@@ -110,14 +112,16 @@ public class PlayerController : MonoBehaviour
             this._rigidBody.velocity = Vector2.zero;
             this._isGrounded = false;
             DeadSound.Play();
+
+            this._controller.HitEnemy();
+
         }
-        //else if (other.gameObject.CompareTag("key"))
-        //{
-        //    Destroy(other.gameObject);
-        //}
         else if (other.gameObject.CompareTag("enemy"))
         {
             this._transform.position = _spawnPoint.GetComponent<Transform>().position;
+            this._rigidBody.velocity = Vector2.zero;
+            this._isGrounded = false;
+            this._controller.HitEnemy();
         }
     }
 
