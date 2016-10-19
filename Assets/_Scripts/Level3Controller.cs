@@ -5,25 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Level3Controller : LevelController {
 
-    private Text _gameClearText;
-
-    protected override void Start()
-    {
-        base.Start();
-
-        //this._gameClearText = GameObject.Find("txtGame3").GetComponent<Text>();
-        //this._gameClearText.enabled = false;
-    }
-
     public override void ExitLevel()
     {
-        //this._gameOverText1.enabled = false;
-        //this._gameClearText.enabled = false;
-        //this._restartButton.enabled = false;
-    }
+        this._isOver = true;
 
-    public override void RestartButton_onClick()
-    {
-        SceneManager.LoadScene("Level1");
+        this._gameOverText2.GetComponent<Text>().text = "Clear";
+
+        this._gameOverText1.SetActive(true);
+        this._gameOverText2.SetActive(true);
+        this._restartButton.SetActive(true);
+        this._player.SetActive(false);
     }
 }

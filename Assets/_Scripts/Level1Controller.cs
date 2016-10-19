@@ -7,7 +7,7 @@ class Level1Controller : LevelController
     {
         base.Start();
 
-        _score = 1000;
+        _score = 10000;
         _lives = 10;
 
         this._nextLevel = "Level2";

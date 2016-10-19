@@ -10,44 +10,56 @@ public class LevelController : MonoBehaviour
     static protected int _score;
     static protected int _lives;
 
-    protected Text _scoreText, _livesText, _gameOverText1, _gameOverText2;
-    protected Button _restartButton;
+    protected GameObject _scoreText, _livesText, _gameOverText1, _gameOverText2;
+    protected GameObject _restartButton;
     protected string _nextLevel;
+    protected bool _isOver;
+
+    protected GameObject _player;
 
     // Use this for initialization
     protected virtual void Start () {
-        this._scoreText = GameObject.Find("score").GetComponent<Text>();
-        this._livesText = GameObject.Find("lives").GetComponent<Text>();
+        this._scoreText = GameObject.Find("score");
+        this._livesText = GameObject.Find("lives");
 
-        //this._gameOverText1 = GameObject.Find("txtGame1").GetComponent<Text>();
-        //this._gameOverText2 = GameObject.Find("txtGame2").GetComponent<Text>();
-        //this._restartButton = GameObject.Find("btnRestart").GetComponent<Button>();
-        //this._gameOverText1.enabled = false;
-        //this._gameOverText2.enabled = false;
-        //this._restartButton.enabled = false;
+        this._gameOverText1 = GameObject.Find("txtGame1");
+        this._gameOverText2 = GameObject.Find("txtGame2");
+        this._restartButton = GameObject.Find("btnRestart");
+        this._gameOverText1.SetActive(false);
+        this._gameOverText2.SetActive(false);
+        this._restartButton.SetActive(false);
+
+        this._player = GameObject.FindGameObjectWithTag("Player");
+        this._player.SetActive(true);
+
+        this._isOver = false;
     }
 
     // Update is called once per frame
     void Update () {
-        if (_lives > 0)
+        if (!this._isOver)
         {
-            _score--;
-            this._scoreText.text = "Score: " + _score;
-            this._livesText.text = "Lives: " + _lives;
-        }
+            if (_score > 0 && _lives > 0)
+            {
+                _score--;
+                this._scoreText.GetComponent<Text>().text = "Score: " + _score;
+                this._livesText.GetComponent<Text>().text = "Lives: " + _lives;
+            }
 
-        else
-        {
-            _lives = 0;
-            //this._gameOverText1.enabled = true;
-            //this._gameOverText2.enabled = true;
-            //this._restartButton.enabled = true;
+            else
+            {
+                _lives = 0;
+                this._gameOverText1.SetActive(true);
+                this._gameOverText2.SetActive(true);
+                this._restartButton.SetActive(true);
+                this._player.SetActive(false);
+            }
         }
 	}
 
-    public virtual void RestartButton_onClick()
+    public void RestartButton_onClick()
     {
-        Start();
+        SceneManager.LoadScene("Level1");
     }
 
     public void HitEnemy()
@@ -57,6 +69,7 @@ public class LevelController : MonoBehaviour
 
     public virtual void ExitLevel()
     {
+        this._isOver = true;
         _lives += 5;
         SceneManager.LoadScene(this._nextLevel);
     }

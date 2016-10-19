@@ -9,3 +9,4 @@ Last Modified: October 17, 2016 by Winnie Chung
 Revision History:  
 Oct. 17: Initial commit  
 Oct. 17: Added game controllers and initial UI components  
+Oct. 18: Added UI components  
