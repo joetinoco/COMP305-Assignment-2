@@ -18,7 +18,8 @@ public class LevelController : MonoBehaviour
     protected GameObject _player;
 
     // Use this for initialization
-    protected virtual void Start () {
+    protected virtual void Start()
+    {
         this._scoreText = GameObject.Find("score");
         this._livesText = GameObject.Find("lives");
 
@@ -36,14 +37,13 @@ public class LevelController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (!this._isOver)
         {
             if (_score > 0 && _lives > 0)
             {
                 _score--;
-                this._scoreText.GetComponent<Text>().text = "Score: " + _score;
-                this._livesText.GetComponent<Text>().text = "Lives: " + _lives;
             }
 
             else
@@ -54,8 +54,11 @@ public class LevelController : MonoBehaviour
                 this._restartButton.SetActive(true);
                 this._player.SetActive(false);
             }
+
+            this._scoreText.GetComponent<Text>().text = "Score: " + _score;
+            this._livesText.GetComponent<Text>().text = "Lives: " + _lives;
         }
-	}
+    }
 
     public void RestartButton_onClick()
     {

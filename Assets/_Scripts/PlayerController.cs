@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Sound Clips")]
     public AudioSource JumpSound;
     public AudioSource DeadSound;
+    public AudioSource HurtSound;
 
     // Use this for initialization
     void Start()
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour
             this._transform.position = _spawnPoint.GetComponent<Transform>().position;
             this._rigidBody.velocity = Vector2.zero;
             this._isGrounded = false;
+            HurtSound.Play();
             this._controller.HitEnemy();
         }
     }
