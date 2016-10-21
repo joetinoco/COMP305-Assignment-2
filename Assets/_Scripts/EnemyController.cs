@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            this._transform.localScale = new Vector2(-1, 1);
             this._velocity = Vector2.right * this.Speed;
         }
     }
@@ -43,6 +44,10 @@ public class EnemyController : MonoBehaviour
             this._transform.position.x <= this._originalPosition.x - this.MaxDisplacement)))
         {
             // change the direction of movement when the object moves past its max displacement
+            if (!this.isVertical)
+            {
+                this._transform.localScale = new Vector2(this._transform.localScale.x * -1, 1);
+            }
             this._velocity *= -1;
         }
 

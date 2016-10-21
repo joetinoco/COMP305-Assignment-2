@@ -125,6 +125,11 @@ public class PlayerController : MonoBehaviour
             HurtSound.Play();
             this._controller.HitEnemy();
         }
+        else if (other.gameObject.CompareTag("key"))
+        {
+            Destroy(other.gameObject);
+            this._controller.GetKey();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other)

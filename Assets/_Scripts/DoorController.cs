@@ -3,7 +3,11 @@ using System.Collections;
 
 public class DoorController : MonoBehaviour {
 
+    // private instance variable
     private LevelController _controller;
+
+    // public instance variable
+    public bool _isLocked;
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +18,23 @@ public class DoorController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    // start the next level when player reaches the exit
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
-            this._controller.ExitLevel();
+            if (this._isLocked && this._controller.HasKey)
+            {
+                // 'unlock' door
+                Destroy(this.gameObject);
+            }
+
+            else if (!this._isLocked)
+            {
+                this._controller.ExitLevel();
+            }
         }
     }
 }

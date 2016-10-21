@@ -16,8 +16,19 @@ public class LevelController : MonoBehaviour
     protected bool _isOver;
 
     protected GameObject _player;
+    
+    protected bool _hasKey;
 
-    // Use this for initialization
+    // public property
+    public bool HasKey
+    {
+        get
+        {
+            return _hasKey;
+        }
+    }
+
+    // Use this for initialization (can be overriden by subclasses)
     protected virtual void Start()
     {
         this._scoreText = GameObject.Find("score");
@@ -33,21 +44,28 @@ public class LevelController : MonoBehaviour
         this._player = GameObject.FindGameObjectWithTag("Player");
         this._player.SetActive(true);
 
+        this._hasKey = false;
         this._isOver = false;
     }
 
-    // Update is called once per frame
+    // Update is called once per frame, when the game
+    // has not been cleared
     void Update()
     {
         if (!this._isOver)
         {
-            if (_score > 0 && _lives > 0)
+            // score is dependent on time
+            if (_lives > 0)
             {
-                _score--;
+                if (_score > 0)
+                    _score--;
             }
 
             else
             {
+                // if player ran out of lives, stop the avatar
+                // and display the game over text and restart
+                // button
                 _lives = 0;
                 this._gameOverText1.SetActive(true);
                 this._gameOverText2.SetActive(true);
@@ -60,16 +78,25 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    // click handler for the restart button
     public void RestartButton_onClick()
     {
         SceneManager.LoadScene("Level1");
     }
 
+    // decrease lives if player hits an enemy
     public void HitEnemy()
     {
         _lives--;
     }
 
+    // set hasKey flag to be true
+    public virtual void GetKey()
+    {
+        this._hasKey = true;
+    }
+
+    // start the next level (can be overriden by subclasses)
     public virtual void ExitLevel()
     {
         this._isOver = true;

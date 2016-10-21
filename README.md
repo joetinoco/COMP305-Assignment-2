@@ -11,3 +11,4 @@ Oct. 17: Initial commit
 Oct. 17: Added game controllers and initial UI components  
 Oct. 18: Added UI components  
 Oct. 19: Added sound assets  
+Oct. 20: Added menu scene, increased difficulty (level 3), and added WebGL build    
