@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿// COMP305 Assignment 2 - completed by Winnie Chung
+
+using UnityEngine;
 using System.Collections;
 
+// controls the enemy's movement
 public class EnemyController : MonoBehaviour
 {
     // private instance variables

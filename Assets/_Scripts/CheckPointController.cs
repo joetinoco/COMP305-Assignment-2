@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿// COMP305 Assignment 2 - completed by Winnie Chung
+
+using UnityEngine;
 using System.Collections;
 
+// controls check point behaviour with respect to the player and key (when present) game objects
 public class CheckPointController : MonoBehaviour
 {
     // private instance variable

@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿// COMP305 Assignment 2 - completed by Winnie Chung
+
+using UnityEngine;
 using System.Collections;
 using System;
 
+// controls player behaviour (movement, interaction with other game objects)
 public class PlayerController : MonoBehaviour
 {
     // private instance variables
@@ -59,7 +62,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // check if input is present for jumping
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetAxis("Vertical") > 0)
             {
                 this._jump = 1;
                 JumpSound.Play();

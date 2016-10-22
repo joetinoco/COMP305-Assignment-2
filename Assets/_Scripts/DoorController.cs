@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿// COMP305 Assignment 2 - completed by Winnie Chung
+
+using UnityEngine;
 using System.Collections;
 
+// controls the exit's interaction with the player game object
 public class DoorController : MonoBehaviour {
 
     // private instance variable

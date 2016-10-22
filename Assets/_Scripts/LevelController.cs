@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿// COMP305 Assignment 2 - completed by Winnie Chung
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+// keeps track of the game state for the scene, and the transitions between scenes
 public class LevelController : MonoBehaviour
 {
     // protected variables shared with subclasses
