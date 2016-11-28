@@ -1,15 +1,10 @@
-# COMP305-Assignment-2 Project
+# COMP305-FinalAssignment Project
 
-Source file name: COMP305-Assignment-2  
-Author: Winnie Chung (300833637)  
-Description: A simple platformer game created in Unity  
-Created: October 17, 2016  
-Last Modified: October 19, 2016 by Winnie Chung  
+Source file name: COMP305-FinalAssignment
+Authors: Winnie Chung (300833637), Joseph Tinoco (300819835) and Vasyl Milchevskyi  
+Description: A 2D platformer game with 3 levels, created in Unity. Forked from Winnie's "Assignment 2" and further expanded.  
+Created: November 28, 2016
+Last Modified: November 28, 2016  
   
 Revision History:  
-Oct. 17: Initial commit  
-Oct. 17: Added game controllers and initial UI components  
-Oct. 18: Added UI components  
-Oct. 19: Added sound assets  
-Oct. 20: Added menu scene, increased difficulty (level 3), and added WebGL build  
-Oct. 21: Added additional internal documentation  
+Nov. 28: Initial fork, README updates.  
