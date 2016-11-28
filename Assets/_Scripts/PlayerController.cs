@@ -148,4 +148,13 @@ public class PlayerController : MonoBehaviour
         this._animator.SetInteger("playerState", 2);
         this._isGrounded = false;
     }
+
+    // Public methods
+	// ==========================================	
+
+	// This method is used by moving platforms
+	// to displace the player together with them as they move
+	public void Displace(Vector3 displacement) {
+		this._transform.position += displacement;
+	}
 }
