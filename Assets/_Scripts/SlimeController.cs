@@ -35,9 +35,6 @@ public class SlimeController : MonoBehaviour {
 				this.SightEnd.position, 
 				1 << LayerMask.NameToLayer ("Solid"));
 
-			Debug.Log("Grounded: " + this._isGrounded + ", isGroundAhead:" + this._isGroundAhead);
-			Debug.Log("velocity: " + this._rigidbody.velocity);
-
 			// just for debugging purposes
 			Debug.DrawLine (this.SightStart.position, this.SightEnd.position);
 
