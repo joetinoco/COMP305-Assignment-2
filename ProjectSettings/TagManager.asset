@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - lockedDoor
   - key
+  - PlayerHead
+  - box
   layers:
   - Default
   - TransparentFX

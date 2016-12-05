@@ -87,6 +87,11 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    // award points to player (when he hits boxes, etc)
+    public void AwardPoints(int amount) {
+        _score += amount;
+    }
+
     // decrease lives if player hits an enemy
     public void HitEnemy()
     {

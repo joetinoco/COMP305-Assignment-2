@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource JumpSound;
     public AudioSource DeadSound;
     public AudioSource HurtSound;
+    public AudioSource PickupSound;
 
     // Use this for initialization
     void Start()
@@ -137,9 +138,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("platform"))
+        if (other.gameObject.CompareTag("platform") || other.gameObject.CompareTag("box"))
         {
-            this._isGrounded = true;
+            if (other.transform.position.y < this._transform.position.y) {
+                this._isGrounded = true;
+            }
+            
         }
     }
 
@@ -157,4 +161,8 @@ public class PlayerController : MonoBehaviour
 	public void Displace(Vector3 displacement) {
 		this._transform.position += displacement;
 	}
+
+    public void PlayPickupSound() {
+        PickupSound.Play();
+    }
 }
