@@ -38,45 +38,58 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // check if input for movement is present
+        this._move = Input.GetAxis("Horizontal");
+        if (this._move > 0f)
+        {
+            this._animator.SetInteger("playerState", 1);
+            this._move = 1;
+            this._flip();
+            this._isFacingRight = true;
+        }
+        else if (this._move < 0f)
+        {
+            this._animator.SetInteger("playerState", 1);
+            this._move = -1;
+            this._flip();
+            this._isFacingRight = false;
+        }
+        else
+        {
+            this._animator.SetInteger("playerState", 0);
+            this._move = 0;
+        }
+        
+        // Jump checking
         if (this._isGrounded)
         {
-            // check if input for movement is present
-            this._move = Input.GetAxis("Horizontal");
-            if (this._move > 0f)
-            {
-                this._animator.SetInteger("playerState", 1);
-                this._move = 1;
-                this._flip();
-                this._isFacingRight = true;
-            }
-            else if (this._move < 0f)
-            {
-                this._animator.SetInteger("playerState", 1);
-                this._move = -1;
-                this._flip();
-                this._isFacingRight = false;
-            }
-            else
-            {
-                this._animator.SetInteger("playerState", 0);
-                this._move = 0;
-            }
-
             // check if input is present for jumping
             if (Input.GetAxis("Vertical") > 0)
             {
                 this._jump = 1;
                 JumpSound.Play();
             }
-
-            this._rigidBody.AddForce(new Vector2(this._move * Velocity, this._jump * JumpForce), ForceMode2D.Force);
         }
         else
         {
-            this._move = 0;
             this._jump = 0;
+            
+            // Restrict horizontal velocity when in mid-air
+            Vector2 currentVelocity = this._rigidBody.GetRelativePointVelocity(_camera.transform.position); 
+            Debug.Log(currentVelocity);
+            if (this._move == 1) { // Moving right
+                if (currentVelocity.x > (Velocity/4)) this._move = 0;
+            } else { // Moving left
+                if (currentVelocity.x < -(Velocity/4)) this._move = 0;
+            }
         }
 
+
+        this._rigidBody.AddForce(new Vector2(
+            this._move * Velocity, 
+            this._jump * JumpForce),
+            ForceMode2D.Force
+        );
         _camera.transform.position = new Vector3(this._transform.position.x , this._transform.position.y , -10f);
     }
 

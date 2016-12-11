@@ -79,6 +79,21 @@ public class LevelController : MonoBehaviour
             this._scoreText.GetComponent<Text>().text = "Score: " + _score;
             this._livesText.GetComponent<Text>().text = "Lives: " + _lives;
         }
+
+        this._readDebugKeys();
+    }
+
+    // Read and process utility keys to help debugging the game.
+    private void _readDebugKeys() {
+
+        if (Input.GetKey("2")) {
+            SceneManager.LoadScene("Level2");
+        }
+
+        if (Input.GetKey("3")) {
+            SceneManager.LoadScene("Level3");
+        }
+
     }
 
     // click handler for the restart button
