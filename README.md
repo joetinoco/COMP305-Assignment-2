@@ -9,3 +9,4 @@ Last Modified: December 4, 2016
 Revision History:  
 Nov. 28: Initial fork, README updates.  
 Dec. 4: Implemented Vasyl's design for level 1, renamed and edited external documentation  
+Dec. 11: Implemented Vasyl's design for level 2  

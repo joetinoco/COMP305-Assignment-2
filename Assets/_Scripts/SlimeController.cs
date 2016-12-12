@@ -62,10 +62,7 @@ public class SlimeController : MonoBehaviour {
 	 * This method flips the character's bitmap across the x-axis
 	 */
 	private void _flip () {
-		if (this._transform.localScale.x == 1) {
-			this._transform.localScale = new Vector2 (-1f, 1f);
-		} else {
-			this._transform.localScale = new Vector2 (1f, 1f);
-		}
-	}
+        float oldScale = this._transform.localScale.x;
+        this._transform.localScale = new Vector2(-1f * oldScale, Mathf.Abs(oldScale));
+    }
 }
