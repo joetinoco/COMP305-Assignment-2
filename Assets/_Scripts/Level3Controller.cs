@@ -17,12 +17,15 @@ public class Level3Controller : LevelController {
         
         this._finish = GameObject.FindGameObjectWithTag("Finish");
         this._finish.SetActive(false);
+        this._keysNeeded = 1;
     }
 
     public override void GetKey()
     {
         base.GetKey();
-        this._finish.SetActive(true);
+        if (base.HasKeys) {
+            this._finish.SetActive(true);
+        }
     }
 
     /* instead of starting a new level,

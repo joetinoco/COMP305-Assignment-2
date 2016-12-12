@@ -46,6 +46,13 @@ public class SlimeController : MonoBehaviour {
 		}
 	}
 
+	private void OnCollisionEnter2D(Collision2D other) {
+		if(other.gameObject.CompareTag("enemy") ||
+			other.gameObject.CompareTag("key")) {
+			this._flip();
+		}
+	}
+
 	private void OnCollisionStay2D(Collision2D other) {
 		if(other.gameObject.CompareTag("platform")) {
 			this._isGrounded = true;

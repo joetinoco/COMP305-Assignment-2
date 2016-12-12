@@ -20,14 +20,15 @@ public class LevelController : MonoBehaviour
 
     protected GameObject _player;
     
-    protected bool _hasKey;
+    protected int _keys; // The keys the player collected
+    protected int _keysNeeded; // The amount of keys the player needs to complete the level
 
     // public property
-    public bool HasKey
+    public bool HasKeys
     {
         get
         {
-            return _hasKey;
+            return _keys == _keysNeeded;
         }
     }
 
@@ -47,7 +48,8 @@ public class LevelController : MonoBehaviour
         this._player = GameObject.FindGameObjectWithTag("Player");
         this._player.SetActive(true);
 
-        this._hasKey = false;
+        this._keys = 0;
+        this._keysNeeded = 0;
         this._isOver = false;
     }
 
@@ -94,6 +96,12 @@ public class LevelController : MonoBehaviour
             SceneManager.LoadScene("Level3");
         }
 
+        if (Input.GetKey("m")) {
+            Camera camera = (Camera) FindObjectOfType(typeof(Camera));
+            AudioSource bgSource = (AudioSource) camera.GetComponentInChildren(typeof(AudioSource));
+            bgSource.Stop();
+        }
+
     }
 
     // click handler for the restart button
@@ -113,10 +121,10 @@ public class LevelController : MonoBehaviour
         _lives--;
     }
 
-    // set hasKey flag to be true
+    // mark a key as caught
     public virtual void GetKey()
     {
-        this._hasKey = true;
+        this._keys++;
     }
 
     // start the next level (can be overriden by subclasses)

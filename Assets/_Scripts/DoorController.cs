@@ -28,7 +28,7 @@ public class DoorController : MonoBehaviour {
         Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
-            if (this._isLocked && this._controller.HasKey)
+            if (this._isLocked && this._controller.HasKeys)
             {
                 // 'unlock' door
                 Destroy(this.gameObject);
