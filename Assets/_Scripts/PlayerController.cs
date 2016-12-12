@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
             
             // Restrict horizontal velocity when in mid-air
             Vector2 currentVelocity = this._rigidBody.GetRelativePointVelocity(_camera.transform.position); 
-            Debug.Log(currentVelocity);
+            // Debug.Log(currentVelocity);
             if (this._move == 1) { // Moving right
                 if (currentVelocity.x > (Velocity/4)) this._move = 0;
             } else { // Moving left
