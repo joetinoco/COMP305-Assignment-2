@@ -13,17 +13,17 @@ public class Level3Controller : LevelController {
 
     protected override void Start()
     {
+        this._keysNeeded = GameObject.FindGameObjectsWithTag("key").Length;
         base.Start();
         
         this._finish = GameObject.FindGameObjectWithTag("Finish");
         this._finish.SetActive(false);
-        this._keysNeeded = 1;
     }
 
     public override void GetKey()
     {
         base.GetKey();
-        if (base.HasKeys) {
+        if (base.HasAllKeys) {
             this._finish.SetActive(true);
         }
     }

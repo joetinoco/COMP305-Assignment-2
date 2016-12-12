@@ -13,7 +13,7 @@ public class LevelController : MonoBehaviour
     static protected int _score;
     static protected int _lives;
 
-    protected GameObject _scoreText, _livesText, _gameOverText1, _gameOverText2;
+    protected GameObject _scoreText, _livesText, _keysText, _gameOverText1, _gameOverText2;
     protected GameObject _restartButton;
     protected string _nextLevel;
     protected bool _isOver;
@@ -24,7 +24,7 @@ public class LevelController : MonoBehaviour
     protected int _keysNeeded; // The amount of keys the player needs to complete the level
 
     // public property
-    public bool HasKeys
+    public bool HasAllKeys
     {
         get
         {
@@ -37,6 +37,8 @@ public class LevelController : MonoBehaviour
     {
         this._scoreText = GameObject.Find("score");
         this._livesText = GameObject.Find("lives");
+        this._keysText = GameObject.Find("keys");
+        if (this._keysText != null && this._keysNeeded == 0) this._keysText.SetActive(false);
 
         this._gameOverText1 = GameObject.Find("txtGame1");
         this._gameOverText2 = GameObject.Find("txtGame2");
@@ -49,7 +51,6 @@ public class LevelController : MonoBehaviour
         this._player.SetActive(true);
 
         this._keys = 0;
-        this._keysNeeded = 0;
         this._isOver = false;
     }
 
@@ -80,6 +81,7 @@ public class LevelController : MonoBehaviour
 
             this._scoreText.GetComponent<Text>().text = "Score: " + _score;
             this._livesText.GetComponent<Text>().text = "Lives: " + _lives;
+            if (this._keysText != null) this._keysText.GetComponent<Text>().text = "Keys: " + _keys + "/" + _keysNeeded;
         }
 
         this._readDebugKeys();

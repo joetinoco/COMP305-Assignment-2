@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012006418008}
   - 212: {fileID: 212000013555438552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: castleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014137106168}
   - 212: {fileID: 212000012058663490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: castleMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013311824382}
   - 212: {fileID: 212000010278374118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: castleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012167867906}
   - 212: {fileID: 212000010768161490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: castleMid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - 4: {fileID: 4000010024009252}
   - 212: {fileID: 212000011936732296}
   - 61: {fileID: 61000012514317920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CastlePlatform
   m_TagString: platform
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014195242170}
   - 212: {fileID: 212000013918811830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: castleMid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013061352092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.142, y: 0.294, z: 0}
+  m_LocalPosition: {x: -2.08, y: 7.0787926, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
