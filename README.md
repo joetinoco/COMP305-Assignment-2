@@ -11,4 +11,4 @@ Nov. 28: Initial fork, README updates.
 Dec. 4: Implemented Vasyl's design for level 1, renamed and edited external documentation  
 Dec. 11: Implemented Vasyl's design for level 2, edited external documentation  
 Dec. 12: Implemented Vasyl's design for level 3, other ajustments.  
-Dec. 12: Edited external documentation  
+Dec. 12: Edited external documentation, added initial slide deck  
