@@ -21,4 +21,9 @@ public class MenuController : MonoBehaviour {
     {
         SceneManager.LoadScene("Level1");
     }
+
+    public void InstructionsButton_onClick()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
 }
