@@ -8,6 +8,11 @@ MOVING PLATFORM CONTROLLER
 
 Makes a platform move back and forth between two points.
 
+Created by: Jose Tinoco
+Last Modified: Dec. 13 by Winnie Chung
+Revision History:
+ Nov. 28: File creation
+ Dec. 13: Modified header
 */
 
 public class MovingPlatformController : MonoBehaviour {

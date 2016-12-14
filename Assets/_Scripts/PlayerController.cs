@@ -1,4 +1,17 @@
-﻿// COMP305 Assignment 2 - completed by Winnie Chung
+﻿// PlayerController.cs
+// Created by: Winnie Chung
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Defines the avatar's interaction between other game objects
+// Revision History:
+// Oct. 17: File creation
+// Oct. 19: Added controls for sound
+// Oct. 20: Added interaction with keys
+// Oct. 21: Added internal documentation
+// Nov. 28: Added interaction with moving platforms
+// Dec. 5: Added controls for sound
+// Dec. 11: Added in-air movement
+// Dec. 12: Removed logging
+// Dec. 13: Modified header
 
 using UnityEngine;
 using System.Collections;

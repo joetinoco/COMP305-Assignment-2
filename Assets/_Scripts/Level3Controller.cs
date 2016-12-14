@@ -1,4 +1,14 @@
-﻿// COMP305 Assignment 2 - completed by Winnie Chung
+﻿// Level3Controller.cs
+// Created by: Winnie Chung
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Keeps track of the game state for the third level, and the transition to the next scene
+// Revision History:
+// Oct. 17: File creation
+// Oct. 18: Code refactoring
+// Oct. 20: Added handling for key
+// Oct. 21: Added internal documentation
+// Dec. 12: Modified handling for keys, UI elements
+// Dec. 13: Modified header
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +50,7 @@ public class Level3Controller : LevelController {
         this._gameOverText1.SetActive(true);
         this._gameOverText2.SetActive(true);
         this._restartButton.SetActive(true);
+        this._menuButton.SetActive(true);
         this._player.SetActive(false);
     }
 }

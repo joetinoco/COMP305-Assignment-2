@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿// BoxController.cs
+// Created by: Jose Tinoco
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Defines interaction of the coin box game object with the player game object
+// Revision History:
+// Dec. 5: File creation
+// Dec. 13: Added header
+
+using UnityEngine;
 using System.Collections;
 
 public class BoxController : MonoBehaviour {

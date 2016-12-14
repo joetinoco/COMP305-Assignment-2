@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿// SpringboardController.cs
+// Created by: Jose Tinoco
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Defines the interaction between the player and springboard game objects
+// Revision History:
+// Dec. 11: File creation
+// Dec. 12: Bug fixes
+// Dec. 13: Added header
+
+using UnityEngine;
 using System.Collections;
 
 public class SpringboardController : MonoBehaviour {

@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿// SlimeController.cs
+// Created by: Jose Tinoco
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Defines the interaction between slime game objects and other game objects
+// Revision History:
+// Dec. 4: File creation, removed logging
+// Dec. 11: Modified flip method to accomodate different sizes of the game object
+// Dec. 13: Added header
+
+using UnityEngine;
 using System.Collections;
 
 public class SlimeController : MonoBehaviour {

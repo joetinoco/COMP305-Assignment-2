@@ -1,4 +1,12 @@
-﻿// COMP305 Assignment 2 - completed by Winnie Chung
+﻿// EnemyController.cs
+// Created by: Winnie Chung
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Controls the flying enemy's movement
+// Revision History:
+// Oct. 17: File creation
+// Oct. 20: Added flipping and vertical movement
+// Oct. 21: Added internal documentation
+// Dec. 13: Modified header
 
 using UnityEngine;
 using System.Collections;

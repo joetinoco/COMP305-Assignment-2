@@ -1,4 +1,17 @@
-﻿// COMP305 Assignment 2 - completed by Winnie Chung
+﻿// LevelController.cs
+// Created by: Winnie Chung
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Keeps track of the game state for the scene, and the transitions between scenes
+// Revision History:
+// Oct. 17: File creation
+// Oct. 18: Added control for UI elements
+// Oct. 19: Modified updating of UI elements
+// Oct. 20: Added check for keys, added internal documentation
+// Oct. 21: Added additional internal documentation
+// Dec. 5: Added control for coin boxes
+// Dec. 11: Added interaction with debug keys
+// Dec. 12: Modified check/control for keys, added additional UI elements
+// Dec. 13: Modified header
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +27,7 @@ public class LevelController : MonoBehaviour
     static protected int _lives;
 
     protected GameObject _scoreText, _livesText, _keysText, _gameOverText1, _gameOverText2;
-    protected GameObject _restartButton;
+    protected GameObject _restartButton, _menuButton;
     protected string _nextLevel;
     protected bool _isOver;
 
@@ -43,9 +56,11 @@ public class LevelController : MonoBehaviour
         this._gameOverText1 = GameObject.Find("txtGame1");
         this._gameOverText2 = GameObject.Find("txtGame2");
         this._restartButton = GameObject.Find("btnRestart");
+        this._menuButton = GameObject.Find("btnMenu");
         this._gameOverText1.SetActive(false);
         this._gameOverText2.SetActive(false);
         this._restartButton.SetActive(false);
+        this._menuButton.SetActive(false);
 
         this._player = GameObject.FindGameObjectWithTag("Player");
         this._player.SetActive(true);
@@ -76,6 +91,7 @@ public class LevelController : MonoBehaviour
                 this._gameOverText1.SetActive(true);
                 this._gameOverText2.SetActive(true);
                 this._restartButton.SetActive(true);
+                this._menuButton.SetActive(true);
                 this._player.SetActive(false);
             }
 
@@ -110,6 +126,12 @@ public class LevelController : MonoBehaviour
     public void RestartButton_onClick()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    // click handler for the menu button
+    public void MenuButton_onClick()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     // award points to player (when he hits boxes, etc)

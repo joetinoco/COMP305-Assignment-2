@@ -1,4 +1,13 @@
-﻿// COMP305 Assignment 2 - completed by Winnie Chung
+﻿// CheckPointController.cs
+// Created by: Winnie Chung
+// Last Modified: Dec. 13 by Winnie Chung
+// Description: Controls check point behaviour with respect to the player and key (when present) game objects
+// Revision History:
+// Oct. 17: File creation
+// Oct. 20: Added check for key
+// Oct. 21: Added internal documentation
+// Dec. 12: Removed check for key
+// Dec. 13: Modified header
 
 using UnityEngine;
 using System.Collections;
