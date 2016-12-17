@@ -14,3 +14,4 @@ Dec. 12: Implemented Vasyl's design for level 3, other ajustments.
 Dec. 12: Edited external documentation, added initial slide deck  
 Dec. 13: Added/modified program headers, added Menu button to game over/clear state  
 Dec. 15: Added a Future Possibilities slide to the slide deck  
+Dec. 17: Added Instructions scene to the project    
